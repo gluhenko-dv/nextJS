@@ -22,9 +22,9 @@ const SliderPhotos: React.FC<ISliderPhotosProps> = ({ photos }) => {
         modules={[Navigation, Pagination]}
         className="mySwiper"
       >
-        {photos.map(({ id, url }) => (
+        {photos.map(({ id, url, title }) => (
           <SwiperSlide key={id}>
-            <Image src={url} width={600} height={600}></Image>
+            <Image src={url} width={600} height={600} alt={title}/>
           </SwiperSlide>
         ))}
       </Swiper>

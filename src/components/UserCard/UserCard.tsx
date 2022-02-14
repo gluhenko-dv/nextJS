@@ -9,7 +9,6 @@ const UserCard: React.FC<IUser> = ({
   email,
   phone,
   website,
-  username,
 }) => {
   return (
     <article className={styles.userCard} key={id}>

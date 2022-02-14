@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../../modules/Header/Header";
+import Header from "../Header/Header";
 
 interface ILayoutProps {
   title: string;

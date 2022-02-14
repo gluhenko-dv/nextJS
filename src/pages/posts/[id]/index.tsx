@@ -16,7 +16,7 @@ interface IPostsPageProps {
 
 const PostPage: NextPage<IPostsPageProps> = ({ post, postComments }) => {
   const router = useRouter();
-  const onClick = useCallback(() => router.back(), []);
+  const onClick = useCallback(() => router.back(), [router]);
 
   return (
     <Layout title={`POST #${post.id}`}>
