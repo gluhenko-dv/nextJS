@@ -4,8 +4,8 @@ import Layout from "../../../components/Layout/Layout";
 import UserCard from "../../../components/UserCard/UserCard";
 import YandexMap from "../../../components/YandexMap/YandexMap";
 import { IAlbum, IPost, IUser } from "../../../interfaces";
-import Posts from "../../../modules/Posts/Posts";
 import AlbumsList from "../../../components/AlbumsList/AlbumsList";
+import Posts from "../../../components/Posts/Posts";
 
 interface IUserPageProps {
   user: IUser;

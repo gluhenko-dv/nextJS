@@ -1,8 +1,9 @@
 import { getPosts } from "../../api";
 import { IPost } from "../../interfaces";
 import type { GetServerSideProps, NextPage } from "next";
-import Posts from "../../modules/Posts/Posts";
+
 import Layout from "../../components/Layout/Layout";
+import Posts from "../../components/Posts/Posts";
 
 interface IPostsPageProps {
   postsData: IPost[];

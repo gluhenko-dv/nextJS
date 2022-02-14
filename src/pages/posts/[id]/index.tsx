@@ -5,8 +5,9 @@ import { useCallback } from "react";
 import { getPost, getPostComments, getPosts } from "../../../api";
 import Layout from "../../../components/Layout/Layout";
 import { IPost, IPostComment } from "../../../interfaces";
-import Comments from "../../../modules/Comments/Comments";
-import Post from "../../../modules/Post/Post";
+import Comments from "../../../components/Comments/Comments";
+import Post from "../../../components/Post/Post";
+
 
 interface IPostsPageProps {
   post: IPost;
