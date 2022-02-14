@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Hero from "../components/Hero/Hero";
 import Layout from "../components/Layout/Layout";
 
 const Error404Page: NextPage = () => {
