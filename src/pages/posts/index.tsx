@@ -12,8 +12,7 @@ const PostsPage: NextPage<IPostsPageProps> = ({ postsData }) => {
   return (
     <Layout title="Posts">
       <div className="container">
-        <h1>POSTS</h1>
-        <Posts postsData={postsData} />
+        <Posts title="Посты" postsData={postsData} />
       </div>
     </Layout>
   );

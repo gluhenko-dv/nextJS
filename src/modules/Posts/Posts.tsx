@@ -3,13 +3,14 @@ import { IPost } from "../../interfaces";
 import styles from "./Posts.module.css";
 
 interface IPostsProps {
+  title: string;
   postsData: IPost[];
 }
 
-const Posts: React.FC<IPostsProps> = ({ postsData }) => {
+const Posts: React.FC<IPostsProps> = ({ title, postsData }) => {
   return (
     <section className={styles.postsSection}>
-      <h2>Посты пользователя</h2>
+      <h2>{title}</h2>
       <div className={styles.posts}>
         {postsData.map(({ id, title, body }) => (
           <article className={styles.post} key={id}>

@@ -21,6 +21,11 @@ const Header: React.FC = () => {
               <a>Пользователи</a>
             </Link>
           </li>
+          <li>
+            <Link href="/albums">
+              <a>Альбомы</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
