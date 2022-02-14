@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
+import Hero from "../components/Hero/Hero";
 import Layout from "../components/Layout/Layout";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
     <Layout title="Главная">
-      <div className={styles.container}></div>
+      <div className="container">
+        <Hero />
+      </div>
     </Layout>
   );
 };
