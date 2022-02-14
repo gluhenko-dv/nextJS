@@ -1,22 +1,25 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { getUser, getUsers } from "../../../api";
+import { getUser, getUserPosts, getUsers } from "../../../api";
 import Layout from "../../../components/Layout/Layout";
 import UserCard from "../../../components/UserCard/UserCard";
-import { IUser } from "../../../interfaces";
+import YandexMap from "../../../components/YandexMap/YandexMap";
+import { IPost, IUser } from "../../../interfaces";
+import Posts from "../../../modules/Posts/Posts";
 
 interface IUserPageProps {
   user: IUser;
+  userPosts: IPost[];
 }
 
-const UserPage: NextPage<IUserPageProps> = ({ user }) => {
-  const router = useRouter();
-  //const onClick = useCallback(() => router.back(), []);
+const UserPage: NextPage<IUserPageProps> = ({ user, userPosts }) => {
 
   return (
-    <Layout title={`POST #${user.name}`}>
+    <Layout title={`${user.name}`}>
       <div className="container">
         <UserCard {...user} />
+        <YandexMap {...user} />
+        <Posts postsData={userPosts}/>
       </div>
     </Layout>
   );
@@ -34,11 +37,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const user = await getUser(`${params?.id}`);
-  console.log(user);
+  const userPosts = await getUserPosts(`${params?.id}`);
 
   return {
     props: {
       user,
+      userPosts,
     },
   };
 };

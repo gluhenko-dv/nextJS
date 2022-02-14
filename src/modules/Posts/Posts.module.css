@@ -2,9 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.postsSection {
   margin-top: 50px;
 }
-
+.postsSection h2 {
+  margin-bottom: 20px;
+}
 .post {
   display: block;
   width: 32%;
