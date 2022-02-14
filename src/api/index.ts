@@ -24,3 +24,7 @@ export const getUsers = async (): Promise<IUser[]> => {
   const { data } = await instance.get(`/users`);
   return data;
 };
+export const getUser = async (id: string): Promise<IUser[]> => {
+  const { data } = await instance.get(`/users/${id}`);
+  return data;
+};

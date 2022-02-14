@@ -3,7 +3,14 @@ import { IUser } from "../../interfaces";
 import LinkWrap from "../LinkWrap/LinkWrap";
 import styles from "./UserCard.module.css";
 
-const UserCard: React.FC<IUser> = ({ id, name, email, phone, website }) => {
+const UserCard: React.FC<IUser> = ({
+  id,
+  name,
+  email,
+  phone,
+  website,
+  username,
+}) => {
   return (
     <article className={styles.userCard} key={id}>
       <Link href={`/users/${id}`}>
