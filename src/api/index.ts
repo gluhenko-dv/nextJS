@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IPost, IPostComment } from "../interfaces";
+import { IPost, IPostComment, IUser } from "../interfaces";
 
 const instance = axios.create({
   baseURL: process.env.API_URL,
@@ -17,5 +17,10 @@ export const getPost = async (id: string): Promise<IPost> => {
 
 export const getPostComments = async (id: string): Promise<IPostComment[]> => {
   const { data } = await instance.get(`/posts/${id}/comments`);
+  return data;
+};
+
+export const getUsers = async (): Promise<IUser[]> => {
+  const { data } = await instance.get(`/users`);
   return data;
 };

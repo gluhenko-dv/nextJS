@@ -1,0 +1,7 @@
+.userLink {
+  color: #6c757d;
+  transition: 0.3s;
+}
+.userLink:hover {
+  color: black;
+}
