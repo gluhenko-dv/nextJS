@@ -1,0 +1,17 @@
+.comments {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-top: 50px;
+}
+.comment {
+  border-bottom: 1px solid #6c757d;
+  margin-top: 20px;
+  color: #6c757d;
+}
+.commentText {
+  margin: 5px 0;
+}
+.commentText:first-letter {
+  text-transform: uppercase;
+}
