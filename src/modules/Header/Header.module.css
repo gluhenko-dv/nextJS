@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  padding: 20px;
+  padding-left: 300px;
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+
+.linksWrap {
+  display: flex;
+}
+.linksWrap li {
+  margin-right: 20px;
+  transition: 0.3s;
+}

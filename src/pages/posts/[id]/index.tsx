@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { getPost, getPostComments, getPosts } from "../../../api";
+import Layout from "../../../components/Layout/Layout";
 import { IPost, IPostComment } from "../../../interfaces";
 import Comments from "../../../modules/Comments/Comments";
 import Post from "../../../modules/Post/Post";
@@ -17,15 +18,19 @@ const PostPage: NextPage<IPostsPageProps> = ({ post, postComments }) => {
   const onClick = useCallback(() => router.back(), []);
 
   return (
-    <div className="container">
-      <Head>
-        <title>POST #{post.id}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <button className="goBackBtn" onClick={onClick}>GO BACK</button>
-      <Post {...post} />
-      <Comments postComments={postComments} />
-    </div>
+    <Layout title={`POST #${post.id}`}>
+      <div className="container">
+        <Head>
+          <title>POST #{post.id}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <button className="goBackBtn" onClick={onClick}>
+          GO BACK
+        </button>
+        <Post {...post} />
+        <Comments postComments={postComments} />
+      </div>
+    </Layout>
   );
 };
 
