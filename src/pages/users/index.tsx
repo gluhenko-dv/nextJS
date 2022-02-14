@@ -13,6 +13,7 @@ const UsersPage: NextPage<IUsersPageProps> = ({ users }) => {
   return (
     <Layout title="Пользователи">
       <div className="container">
+        <h2 className={styles.title}>Пользователи</h2>
         <div className={styles.usersWrap}>
           {users.map((user) => (
             <UserCard key={user.id}{...user} />

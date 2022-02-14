@@ -43,15 +43,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const photos = await getAlbumsPhoto(`${params?.id}`);
-  const album = await getAlbum(`${params?.id}`);
-  const user = await getUser(`${album.userId}`);
+  try {
+    const photos = await getAlbumsPhoto(`${params?.id}`);
+    const album = await getAlbum(`${params?.id}`);
+    const user = await getUser(`${album.userId}`);
 
-  return {
-    props: {
-      photos,
-      album,
-      user,
-    },
-  };
+    return {
+      props: {
+        photos,
+        album,
+        user,
+      },
+    };
+  } catch (e) {
+    return { notFound: true };
+  }
 };

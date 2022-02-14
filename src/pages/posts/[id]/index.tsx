@@ -8,7 +8,6 @@ import { IPost, IPostComment } from "../../../interfaces";
 import Comments from "../../../components/Comments/Comments";
 import Post from "../../../components/Post/Post";
 
-
 interface IPostsPageProps {
   post: IPost;
   postComments: IPostComment[];
@@ -44,13 +43,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getPost(`${params?.id}`);
-  const postComments = await getPostComments(`${params?.id}`);
+  try {
+    const post = await getPost(`${params?.id}`);
+    const postComments = await getPostComments(`${params?.id}`);
 
-  return {
-    props: {
-      post,
-      postComments,
-    },
-  };
+    return {
+      props: {
+        post,
+        postComments,
+      },
+    };
+  } catch (e) {
+    return { notFound: true };
+  }
 };

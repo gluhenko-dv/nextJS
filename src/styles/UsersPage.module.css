@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.title {
+  margin-top: 50px;
+}
