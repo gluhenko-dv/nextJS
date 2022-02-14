@@ -1,6 +1,6 @@
 import { getPosts } from "../../api";
 import { IPost } from "../../interfaces";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
 import Layout from "../../components/Layout/Layout";
 import Posts from "../../components/Posts/Posts";
@@ -21,7 +21,7 @@ const PostsPage: NextPage<IPostsPageProps> = ({ postsData }) => {
 
 export default PostsPage;
 
-export const getServerSideProps: GetServerSideProps = async ({}) => {
+export const getStaticProps: GetStaticProps = async ({}) => {
 
   const postsData = await getPosts();
   return {

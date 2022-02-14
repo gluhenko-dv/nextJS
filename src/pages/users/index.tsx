@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { getUsers } from "../../api";
 import Layout from "../../components/Layout/Layout";
 import UserCard from "../../components/UserCard/UserCard";
@@ -26,7 +26,7 @@ const UsersPage: NextPage<IUsersPageProps> = ({ users }) => {
 
 export default UsersPage;
 
-export const getServerSideProps: GetServerSideProps = async ({}) => {
+export const getStaticProps: GetStaticProps = async ({}) => {
   const users = await getUsers();
   return {
     props: {

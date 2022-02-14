@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { getAlbums, getUsers } from "../../api";
 import AlbumsList from "../../components/AlbumsList/AlbumsList";
 import Layout from "../../components/Layout/Layout";
@@ -22,7 +22,7 @@ const AlbumsPage: NextPage<IAlbumsPageProps> = ({ albums }) => {
 
 export default AlbumsPage;
 
-export const getServerSideProps: GetServerSideProps = async ({}) => {
+export const getStaticProps: GetStaticProps = async ({}) => {
   const albums = await getAlbums();
   return {
     props: {
