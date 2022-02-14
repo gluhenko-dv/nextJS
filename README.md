@@ -4,7 +4,7 @@
 Open [https://next-js.gluhenko.ru/](https://next-js.gluhenko.ru/) статический билд на виртуальном хостинге без SSR только SSG, локально можно запустить с SSR.
 
 
-#С чем взаимодействовал?
+# С чем взаимодействовал?
 
 Next.JS: [https://nextjs.org/docs](https://nextjs.org/docs)
 
