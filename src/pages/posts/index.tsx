@@ -23,7 +23,6 @@ export default PostsPage;
 
 export const getServerSideProps: GetServerSideProps = async ({}) => {
   const postsData = await getPosts();
-
   return {
     props: {
       postsData,

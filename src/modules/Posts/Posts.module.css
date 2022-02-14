@@ -47,3 +47,14 @@
   background-color: #6c757d;
   color: white;
 }
+
+@media (max-width: 1100px) {
+  .post {
+    width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  .post {
+    width: 100%;
+  }
+}
